@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
-    private const val BASE_URL = "https://static.leboncoin.fr/img/shared/technical-test.json"
+    private const val BASE_URL = "https://static.leboncoin.fr/img/shared/"
 
     @Provides
     fun provideLebonCoinService(): LebonCoinAPI {

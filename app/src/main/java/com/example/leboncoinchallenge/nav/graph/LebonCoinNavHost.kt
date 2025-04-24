@@ -6,7 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.leboncoinchallenge.nav.destinations.Home
-import com.example.leboncoinchallenge.ui.HomeView
+import com.example.leboncoinchallenge.ui.home.HomeView
 
 @Composable
 fun LebonCoinNavHost(navHostController: NavHostController, modifier: Modifier) {
@@ -16,7 +16,7 @@ fun LebonCoinNavHost(navHostController: NavHostController, modifier: Modifier) {
         modifier = modifier
     ) {
         composable(Home.route) {
-            HomeView(modifier)
+            HomeView(modifier = modifier)
         }
     }
 }

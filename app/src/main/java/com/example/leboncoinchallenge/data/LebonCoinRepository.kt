@@ -4,5 +4,5 @@ import com.example.leboncoinchallenge.data.domain.model.Album
 import kotlinx.coroutines.flow.Flow
 
 interface LebonCoinRepository {
-    suspend fun getAlbums(): Result<Flow<List<Album>>>
+    fun getAlbums(): Flow<List<Album>>
 }

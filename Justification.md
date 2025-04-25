@@ -29,5 +29,3 @@ With a few lines of code we have our logic done.
 * Used Kotlin Flows because of the reactivity, meaning that every time we receive a new value, the UI is updated. Flow's are also good because of being asynchronous. 
 
 * JUnit for the tests because it's one of the native ones, mockk is just a preference, I use it because it's intuitive in what's being done.
-
-* flatMapLatest, map of flows

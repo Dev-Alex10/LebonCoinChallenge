@@ -1,7 +1,6 @@
 package com.example.leboncoinchallenge.data.remote
 
 import com.example.leboncoinchallenge.data.remote.album.model.toDomain
-import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class LebonRemoteDataSource @Inject constructor(
@@ -9,6 +8,6 @@ class LebonRemoteDataSource @Inject constructor(
 ) {
 
     suspend fun getAlbums() = runCatching {
-        lebonCoinAPI.getAlbums().map { list -> list.map { it.toDomain() } }
+        lebonCoinAPI.getAlbums().map { it.toDomain() }
     }
 }

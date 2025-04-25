@@ -1,24 +1,19 @@
 package com.example.leboncoinchallenge.di
 
+import com.example.leboncoinchallenge.data.LebonCoinRepository
 import com.example.leboncoinchallenge.data.LebonCoinRepositoryImpl
-import com.example.leboncoinchallenge.data.local.LebonLocalDataSource
-import com.example.leboncoinchallenge.data.remote.LebonRemoteDataSource
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object RepositoryModule {
-
+interface RepositoryModule {
     @Singleton
-    @Provides
+    @Binds
     fun provideAlbumRepository(
-        remoteDataSource: LebonRemoteDataSource,
-        localDataSource: LebonLocalDataSource,
-    ): LebonCoinRepositoryImpl {
-        return LebonCoinRepositoryImpl(remoteDataSource, localDataSource)
-    }
+        impl: LebonCoinRepositoryImpl
+    ): LebonCoinRepository
 }

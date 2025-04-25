@@ -41,6 +41,4 @@ class HomeViewModel @Inject constructor(private val repository: LebonCoinReposit
     fun retry() {
         retryTrigger.tryEmit(Unit)
     }
-
-
 }

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">LebonCoinChallenge</string>
+    <string name="real_image">Real Image</string>
+    <string name="retry">Retry</string>
+    <string name="an_error_occurred">An error occurred %1$s</string>
+    <string name="leboncoin">LebonCoin</string>
 </resources>

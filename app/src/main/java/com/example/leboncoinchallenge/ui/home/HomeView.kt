@@ -1,7 +1,6 @@
 package com.example.leboncoinchallenge.ui.home
 
 import android.content.Context
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -81,27 +80,22 @@ fun HomeView(
 
         is HomeViewState.Success -> {
             AlbumGrid(state.albums, modifier)
-
         }
     }
 }
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun AlbumGrid(albums: List<Album>, modifier: Modifier = Modifier) {
     val context = LocalContext.current
-    Box {
-        LazyVerticalGrid(
-            columns = GridCells.Adaptive(minSize = 160.dp),
-            modifier = modifier
-                .fillMaxSize(),
-            contentPadding = PaddingValues(8.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp),
-            verticalArrangement = Arrangement.spacedBy(24.dp),
-        ) {
-            items(albums) { album ->
-                GridItem(album, context)
-            }
+    LazyVerticalGrid(
+        columns = GridCells.Adaptive(minSize = 160.dp),
+        modifier = modifier.fillMaxSize(),
+        contentPadding = PaddingValues(8.dp),
+        horizontalArrangement = Arrangement.spacedBy(16.dp),
+        verticalArrangement = Arrangement.spacedBy(24.dp),
+    ) {
+        items(albums) { album ->
+            GridItem(album, context)
         }
     }
 }
@@ -167,7 +161,6 @@ fun GridItem(album: Album, context: Context) {
                             .heightIn(max = 600.dp)
                     )
                 }
-            }
-        )
+            })
     }
 }
